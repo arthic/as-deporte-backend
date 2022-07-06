@@ -8,7 +8,21 @@ class Server {
         this.app = express();
         this.port = process.env.PORT
 
-        this.app.get('/*', function(req, res) {
+        this.app.get('/auth/login', function(req, res) {
+            res.sendFile(path.join(__dirname, '..', 'public/index.html'), function(err) {
+                if (err) {
+                    res.status(500).send(err)
+                }
+            })
+        })
+        this.app.get('/auth/register', function(req, res) {
+            res.sendFile(path.join(__dirname, '..', 'public/index.html'), function(err) {
+                if (err) {
+                    res.status(500).send(err)
+                }
+            })
+        })
+        this.app.get('/auth/login', function(req, res) {
             res.sendFile(path.join(__dirname, '..', 'public/index.html'), function(err) {
                 if (err) {
                     res.status(500).send(err)
