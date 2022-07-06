@@ -1,0 +1,22 @@
+Varibales entornor heroku
+heroku config
+// Aveces es sin comillas
+heroku config:set GOOGLE_CLIENT_ID=269712829475-ftjf6pk13vf512goijqhvdjiuve9i4ki.apps.googleusercontent.com
+heroku config:set GOOGLE_FETCH=https://rest-server-node33.herokuapp.com
+
+heroku config:unset nombre
+// commits como github pero con heroku -> git
+git push heroku master
+
+// ver la consola de prod logs mas bien
+heroku logs -n 100
+// escucha los logs en vivo
+heroku logs -n 100  --tail
+
+Google Identity
+GOOGLE_CLIENT_ID=269712829475-ftjf6pk13vf512goijqhvdjiuve9i4ki.apps.googleusercontent.com
+GOOGLE_SECRET_ID=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
+
+git push heroku master
+
+heroku logs
