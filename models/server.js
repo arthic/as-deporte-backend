@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const fileUpload = require('express-fileupload');
 const { dbConnection } = require('../database/config');
+const path = require('path');
 
 class Server {
     constructor() {
@@ -22,13 +23,20 @@ class Server {
                 }
             })
         })
-        this.app.get('/auth/login', function(req, res) {
+        this.app.get('/auth/*', function(req, res) {
             res.sendFile(path.join(__dirname, '..', 'public/index.html'), function(err) {
                 if (err) {
                     res.status(500).send(err)
                 }
             })
         })
+        // this.app.get('/auth/login', function(req, res) {
+        //     res.sendFile(path.join(__dirname, '..', 'public/index.html'), function(err) {
+        //         if (err) {
+        //             res.status(500).send(err)
+        //         }
+        //     })
+        // })
 
         // PATHS
         this.paths = {
